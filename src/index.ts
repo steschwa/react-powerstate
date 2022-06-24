@@ -17,3 +17,6 @@ export type {
     EditableStateHelpers,
     EditableStateStatus,
 } from "./hooks/useEditableState"
+
+export { default as useUpdateState } from "./hooks/useUpdateState"
+export type { UseUpdateStateReturn } from "./hooks/useUpdateState"
