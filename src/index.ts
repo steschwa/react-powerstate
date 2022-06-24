@@ -14,3 +14,10 @@ export type {
     UseControllableStateParams,
     UseControllableStateReturn,
 } from "./hooks/useControllableState"
+
+export { default as useEditableState } from "./hooks/useEditableState"
+export type {
+    UseEditableReturn,
+    EditableStateHelpers,
+    EditableStateStatus,
+} from "./hooks/useEditableState"
