@@ -5,3 +5,6 @@ export type {
     LateInitializationSetState,
     LateInitializationInitializer,
 } from "./hooks/useLateInitialization"
+
+export { default as useLateInitializationState } from "./hooks/useLateInitializationState"
+export type { UseLateInitializationStateReturn } from "./hooks/useLateInitializationState"
