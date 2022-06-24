@@ -1,7 +1,12 @@
 {
     "name": "react-powerstate",
     "packageManager": "yarn@3.2.1",
+    "sideEffects": false,
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
     "scripts": {
+        "build": "tsup",
         "test": "vitest",
         "coverage": "vitest run --coverage"
     },
