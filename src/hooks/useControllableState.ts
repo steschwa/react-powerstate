@@ -3,11 +3,16 @@ import { getNextStateProducer } from "utils/state"
 import useLatest from "./useLatest"
 
 export type UseControllableStateParams<T> = {
+    /**
+     * Controlled value
+     */
     value?: T | undefined
+    /**
+     * Uncontrolled value
+     */
     defaultValue?: T | undefined
     /**
      * Function to call with the current controlled or uncontrolled value
-     * @default undefined
      */
     onChange?: (value: T) => void
 }

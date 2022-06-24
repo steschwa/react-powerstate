@@ -2,6 +2,7 @@
     "compilerOptions": {
         "allowJs": false,
         "strict": true,
+        "target": "ESNext",
         "moduleResolution": "Node",
         "baseUrl": "./src",
         "noImplicitAny": true,
