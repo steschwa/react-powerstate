@@ -23,8 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-.env
-
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -32,4 +30,5 @@ dist-ssr
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-.vercel
+
+coverage/

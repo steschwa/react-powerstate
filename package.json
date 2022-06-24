@@ -2,12 +2,14 @@
     "name": "react-powerstate",
     "packageManager": "yarn@3.2.1",
     "scripts": {
-        "test": "vitest"
+        "test": "vitest",
+        "coverage": "vitest run --coverage"
     },
     "devDependencies": {
         "@testing-library/react-hooks": "^8.0.1",
         "@types/react": "^18.0.14",
         "@vitejs/plugin-react": "^1.3.2",
+        "c8": "^7.11.3",
         "prettier": "^2.7.1",
         "react": "^18.2.0",
         "react-test-renderer": "^18.2.0",
