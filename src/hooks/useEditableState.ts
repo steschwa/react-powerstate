@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, useCallback, useEffect, useState } from "react"
+import { getNextStateProducer } from "utils/state"
 import useLatest from "./useLatest"
 
 export type UseEditableReturn<T> = readonly [
@@ -22,10 +23,7 @@ export default function useEditableState<T>(value: T): UseEditableReturn<T> {
     }, [value])
 
     const setState: Dispatch<SetStateAction<T>> = useCallback(value => {
-        setInternalState(prev => {
-            const setter = value as SetStateFn<T>
-            return typeof value === "function" ? setter(prev) : value
-        })
+        setInternalState(getNextStateProducer(value))
         setStatus(EditableStateStatus.EDITED)
     }, [])
 
@@ -66,5 +64,3 @@ export type EditableStateHelpers<T> = {
      */
     resetWithValue: (value: T) => void
 }
-
-type SetStateFn<T> = (prev: T) => T

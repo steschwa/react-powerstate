@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, useCallback, useEffect, useRef, useState } from "react"
+import { getNextStateProducer } from "utils/state"
 import useLatest from "./useLatest"
 
 export type UseControllableStateParams<T> = {
@@ -32,8 +33,7 @@ export default function useControllableState<T>(
     const setState: Dispatch<SetStateAction<T | undefined>> = useCallback(
         nextValue => {
             if (isControlled) {
-                const setter = nextValue as SetStateFn<T>
-                const state = typeof nextValue === "function" ? setter(value) : nextValue
+                const state = getNextStateProducer(nextValue)(value)
                 if (state !== value) {
                     latestOnChange.current?.(state as T)
                 }
