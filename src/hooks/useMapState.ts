@@ -17,46 +17,36 @@ export default function useMapState<K, V>(initial?: MapStateInit<K, V>): UseMapS
             get size() {
                 return this.map.size
             }
-
             clear(): void {
                 this.map.clear()
                 this.rerender()
             }
-
             delete(key: K): void {
                 this.map.delete(key)
                 this.rerender()
             }
-
             get(key: K): V | undefined {
                 return this.map.get(key)
             }
-
             has(key: K): boolean {
                 return this.map.has(key)
             }
-
             set(key: K, value: V): void {
                 this.map.set(key, value)
                 this.rerender()
             }
-
             keys(): IterableIterator<K> {
                 return this.map.keys()
             }
-
             values(): IterableIterator<V> {
                 return this.map.values()
             }
-
             entries(): IterableIterator<[K, V]> {
                 return this.map.entries()
             }
-
             toArray(): Array<[K, V]> {
                 return Array.from(this.entries())
             }
-
             private rerender() {
                 setState(createMap(this.map))
             }

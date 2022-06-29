@@ -23,3 +23,6 @@ export type { UseUpdateStateReturn } from "./hooks/useUpdateState"
 
 export { default as useMapState } from "./hooks/useMapState"
 export type { MapStateContract, MapStateInit, UseMapStateReturn } from "./hooks/useMapState"
+
+export { default as useSetState } from "./hooks/useSetState"
+export type { SetStateContract, SetStateInit, UseSetStateReturn } from "./hooks/useSetState"

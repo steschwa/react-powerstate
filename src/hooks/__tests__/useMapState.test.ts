@@ -36,7 +36,7 @@ test("should use Map as initial state", () => {
     expect(Array.from(result.current[0].values())).toMatchObject([1, 2, 3])
 })
 
-test("should clear map", () => {
+test("should clear state", () => {
     const { result } = renderHook(() => {
         const map = new Map()
         map.set(1, "first")
@@ -93,7 +93,7 @@ test("should set key", () => {
     expect(result.current[0].get(1)).toBe("entry")
 })
 
-test("should override map", () => {
+test("should override state", () => {
     const { result } = renderHook(() => {
         const map = new Map()
         map.set(1, "first")
